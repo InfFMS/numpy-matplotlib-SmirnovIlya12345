@@ -34,6 +34,7 @@ for i in range(length):
         x=x-1
         c3+=1
 print('The number of steps to the right, left, up and down accordingly:', c0,c1,c2,c3)
+print("Robot's distance to the centre", np.sqrt((x-20)*(x-20)+(y-20)*(y-20)))
 plt.imshow(data, cmap='bwr')
 plt.colorbar(label="")
 plt.show()
