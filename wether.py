@@ -44,11 +44,12 @@ for i in range(len(y)):
             maxcold=cold
     else:
         cold=0
+fig, axs = plt.subplots(1, 2, figsize=(10, 4))
 print('There was',hot,'hot days')
 print('Longest cold days break:',maxcold)
-plt.plot(x,y)
-plt.show()
+axs[0].plot(x,y)
 temp=['-10','-5','0','5','10','15','20','25','30']
 yes=[y_10,y_5,y0,y5,y10,y15,y20,y25,y30]
-plt.bar(temp,yes,color='red')
+axs[1].bar(temp,yes,color='red')
+plt.show()
 plt.show()
