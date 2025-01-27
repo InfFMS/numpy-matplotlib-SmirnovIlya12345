@@ -5,6 +5,7 @@
 # Визуализация: Используйте тепловую карту (imshow), чтобы показать шахматную доску. Отметьте положение ферзя и атакуемые клетки цветами.
 import matplotlib.pyplot as plt
 import numpy as np
+print("Enter queen's row and file in order to get the squares the queen can reach")
 file=int(input())
 row=int(input())
 fig, ax = plt.subplots()
@@ -27,6 +28,5 @@ for i in range(file-100, 100-file):
         ax.add_patch(circle)
 data[row,file]=data[row,file]
 plt.imshow(data, cmap='hot')
-plt.colorbar(label="")
 plt.title("Шахматная доска")
 plt.show()
