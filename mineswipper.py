@@ -41,56 +41,31 @@ for i in range(rows):
             numberz[i,j]+=data[i+1,j]
         if i!=rows-1 and j!=files-1:
             numberz[i,j]+=data[i+1,j+1]
-for i in range(rows):
-    for j in range(files):
-        if numberz[j,i]==-1:
+for i in range(files):
+    for j in range(rows):
+        if numberz[j,i]%2==1:
             circle=plt.Circle((i,j), 0.1, color="green", label="Окружность")
             ax.add_patch(circle)
-        if numberz[j,i]==-2:
-            circle=plt.Circle((i-0.2,j-0.2), 0.1, color="green", label="Окружность")
-            ax.add_patch(circle)
-            circle=plt.Circle((i+0.2,j+0.2), 0.1, color="green", label="Окружность")
-            ax.add_patch(circle)
-        if numberz[j,i]==-3:
+        if numberz[j,i]<=-2:
             circle=plt.Circle((i-0.3,j-0.3), 0.1, color="green", label="Окружность")
-            ax.add_patch(circle)
-            circle=plt.Circle((i,j), 0.1, color="green", label="Окружность")
             ax.add_patch(circle)
             circle=plt.Circle((i+0.3,j+0.3), 0.1, color="green", label="Окружность")
             ax.add_patch(circle)
         if numberz[j,i]<=-4:
-            circle=plt.Circle((i-0.3,j-0.3), 0.1, color="green", label="Окружность")
-            ax.add_patch(circle)
             circle=plt.Circle((i-0.3,j+0.3), 0.1, color="green", label="Окружность")
-            ax.add_patch(circle)
-            circle=plt.Circle((i+0.3,j+0.3), 0.1, color="green", label="Окружность")
             ax.add_patch(circle)
             circle=plt.Circle((i+0.3,j-0.3), 0.1, color="green", label="Окружность")
             ax.add_patch(circle)
-        if numberz[j,i]==-5:
-            circle=plt.Circle((i,j), 0.1, color="green", label="Окружность")
-            ax.add_patch(circle)
-        if numberz[j,i]==-6:
+        if numberz[j,i]<=-6:
             circle=plt.Circle((i,j-0.3), 0.1, color="green", label="Окружность")
             ax.add_patch(circle)
             circle=plt.Circle((i,j+0.3), 0.1, color="green", label="Окружность")
-            ax.add_patch(circle)
-        if numberz[j,i]==-7:
-            circle=plt.Circle((i,j-0.3), 0.1, color="green", label="Окружность")
-            ax.add_patch(circle)
-            circle=plt.Circle((i,j+0.3), 0.1, color="green", label="Окружность")
-            ax.add_patch(circle)
-            circle=plt.Circle((i,j), 0.1, color="green", label="Окружность")
             ax.add_patch(circle)
         if numberz[j,i]==-8:
-            circle=plt.Circle((i,j-0.3), 0.1, color="green", label="Окружность")
-            ax.add_patch(circle)
-            circle=plt.Circle((i,j+0.3), 0.1, color="green", label="Окружность")
-            ax.add_patch(circle)
             circle=plt.Circle((i-0.3,j), 0.1, color="green", label="Окружность")
             ax.add_patch(circle)
             circle=plt.Circle((i+0.3,j), 0.1, color="green", label="Окружность")
             ax.add_patch(circle)
 plt.imshow(data, cmap='hot')
-plt.title('Minesweeper field, number of points is number of mines')
+plt.title('Minesweeper field (number of dots is number of mines)')
 plt.show()
