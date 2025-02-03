@@ -38,5 +38,7 @@ print('Probabilities of getting 1,2,3,4,5 or 6:',c1/1000,c2/1000,c3/1000,c4/1000
 categories = ["1", "2", "3", "4", "5", "6"]
 values = [c1,c2,c3,c4,c5,c6]
 plt.bar(categories, values, color='red')
+plt.xlabel("Значения кубиков")
+plt.ylabel("Число выпадений")
 plt.title("Столбчатая диаграмма")
 plt.show()
