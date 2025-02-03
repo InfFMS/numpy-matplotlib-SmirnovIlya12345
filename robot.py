@@ -6,3 +6,35 @@
 # Построить путь робота на графике (соединяя все пройденные точки).
 # Подсчитать, сколько шагов робот сделал в каждую сторону.
 # Определить расстояние от начальной точки до конечной.
+import matplotlib.pyplot as plt
+from random import randint
+import numpy as np
+print('Enter the number of steps')
+fig, ax = plt.subplots()
+x=y=20
+length=int(input())
+data=np.zeros((41,41))
+c0=c1=c2=c3=0
+for i in range(length):
+    ra=randint(0,3)
+    if ra==0:
+        ax.plot([x,x], [y,y+1], label="0")
+        y=y+1
+        c0+=1
+    if ra==1:
+        ax.plot([x,x], [y,y-1], label="1")
+        y=y-1
+        c1+=1
+    if ra==2:
+        ax.plot([x,x+1], [y,y], label="2")
+        x=x+1
+        c2+=1
+    if ra==3:
+        ax.plot([x,x-1], [y,y], label="3")
+        x=x-1
+        c3+=1
+print('The number of steps to the right, left, up and down accordingly:', c0,c1,c2,c3)
+print("Robot's distance to the centre", np.sqrt((x-20)*(x-20)+(y-20)*(y-20)))
+plt.imshow(data, cmap='bwr')
+plt.colorbar(label="")
+plt.show()
